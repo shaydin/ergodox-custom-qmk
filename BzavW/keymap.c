@@ -31,9 +31,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-
-
-
 extern rgb_config_t rgb_matrix_config;
 
 void keyboard_post_init_user(void) {
@@ -137,5 +134,8 @@ uint8_t layer_state_set_user(uint8_t state) {
   return state;
 };
 
-
-
+//Custom QMK Config
+const uint16_t PROGMEM toggle_ac[] = {KC_LEFT_CTRL, KC_LEFT_GUI, KC_LEFT_ALT, KC_GRAVE, COMBO_END};
+combo_t key_combos[] = {
+  COMBO(toggle_ac, AC_TOGG),
+};
